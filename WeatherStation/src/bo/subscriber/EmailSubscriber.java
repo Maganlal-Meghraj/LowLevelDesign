@@ -2,11 +2,11 @@ package bo.subscriber;
 
 import bo.item.Item;
 
-public class EmailSubscriber implements Subscriber {
+public abstract class EmailSubscriber implements Subscriber {
 
     private final String maidId;
 
-    public EmailSubscriber(String maidId) {
+    protected EmailSubscriber(String maidId) {
         this.maidId = maidId;
     }
 
@@ -15,7 +15,5 @@ public class EmailSubscriber implements Subscriber {
         sendMail(item);
     }
 
-    private void sendMail(Item item) {
-
-    }
+    protected abstract void sendMail(Item item);
 }

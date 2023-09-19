@@ -2,11 +2,11 @@ package bo.subscriber;
 
 import bo.item.Item;
 
-public class PushNotificationSubscriber implements Subscriber {
+public abstract class PushNotificationSubscriber implements Subscriber {
 
     private final String deviceId;
 
-    public PushNotificationSubscriber(String deviceId) {
+    protected PushNotificationSubscriber(String deviceId) {
         this.deviceId = deviceId;
     }
 
@@ -15,7 +15,5 @@ public class PushNotificationSubscriber implements Subscriber {
         sendPushNotification(item);
     }
 
-    private void sendPushNotification(Item item) {
-
-    }
+    protected abstract void sendPushNotification(Item item);
 }
